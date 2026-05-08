@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="VoltFit – Ropa deportiva moderna, cómoda y accesible. Catálogo oficial." />
+  <title>VoltFit – Ropa Deportiva | JA Infinity</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar__logo">VOLT<span>FIT</span></a>
+    <a href="landing.html" class="btn-primary navbar__cta">Regístrate</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__inner">
+      <span class="hero__badge">🏋️ Lanzamiento Próximo</span>
+      <h1 class="hero__title">Ropa que <span>impulsa</span><br>tu rendimiento</h1>
+      <p class="hero__subtitle">
+        Ropa deportiva moderna, cómoda y accesible diseñada para personas
+        que van en serio con su entrenamiento y estilo de vida activo.
+      </p>
+      <div class="hero__actions">
+        <a href="landing.html" class="btn-primary animate-pulse-glow">Quiero ser el primero →</a>
+        <a href="#catalogo" class="btn-secondary">Ver catálogo</a>
+      </div>
+    </div>
+    <div class="hero__scroll-hint" aria-hidden="true">scroll</div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stat-item"><span class="stat-item__num">12+</span><span class="stat-item__label">Productos</span></div>
+    <div class="stat-item"><span class="stat-item__num">5</span><span class="stat-item__label">Categorías</span></div>
+    <div class="stat-item"><span class="stat-item__num">100%</span><span class="stat-item__label">Calidad</span></div>
+    <div class="stat-item"><span class="stat-item__num">MX</span><span class="stat-item__label">Envíos</span></div>
+  </div>
+
+  <!-- CATÁLOGO -->
+  <section class="section" id="catalogo">
+    <div class="container">
+
+      <div class="section__header">
+        <span class="section__tag">Colección</span>
+        <h2 class="section__title">Nuestro Catálogo</h2>
+        <div class="divider"></div>
+        <p class="section__subtitle">
+          Descubre prendas diseñadas para rendimiento y estilo.
+          Haz clic en "Ver más" para registrar tu interés.
+        </p>
+      </div>
+
+      <!-- Filtros -->
+      <div class="catalog__filters">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="Hombre">Hombre</button>
+        <button class="filter-btn" data-filter="Mujer">Mujer</button>
+        <button class="filter-btn" data-filter="Gym">Gym</button>
+        <button class="filter-btn" data-filter="Running">Running</button>
+        <button class="filter-btn" data-filter="Casual Sport">Casual Sport</button>
+      </div>
+
+      <!-- Grid -->
+      <div class="products-grid" id="productsGrid"></div>
+
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="section section--alt text-center">
+    <span class="section__tag">Lanzamiento exclusivo</span>
+    <h2 class="section__title">¿Listo para el <span class="text-accent">siguiente nivel?</span></h2>
+    <p class="section__subtitle" style="max-width:480px;margin:.75rem auto 2rem;">
+      Regístrate y sé de los primeros en acceder a la colección oficial de VoltFit.
+    </p>
+    <a href="landing.html" class="btn-primary">Registrarme ahora →</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 <span>JA Infinity – VoltFit</span>. Todos los derechos reservados. | México</p>
+  </footer>
+
+  <!-- SCRIPTS: carga en orden, sin type="module" -->
+  <script src="supabase.js"></script>
+  <script>
+    // ── Catálogo local de fallback ─────────────────────────────
+    var FALLBACK_PRODUCTS = [
+      { id: "local-1",  nombre: "Playera Deportiva Pro",   categoria: "Hombre",       descripcion: "Tecnología de absorción de humedad. Tejido transpirable ideal para entrenamientos intensos.",       imagen_url: "https://placehold.co/400x500/111111/39FF14?text=Playera+Pro" },
+      { id: "local-2",  nombre: "Shorts Running Aero",     categoria: "Hombre",       descripcion: "Ligeros con bolsillo lateral y cintura ajustable. Máxima movilidad para cardio.",                    imagen_url: "https://placehold.co/400x500/111111/39FF14?text=Shorts+Aero" },
+      { id: "local-3",  nombre: "Pants Casual Sport",      categoria: "Hombre",       descripcion: "Versátiles con diseño moderno. Para el gym, salidas casuales o días de descanso activo.",             imagen_url: "https://placehold.co/400x500/111111/39FF14?text=Pants+Sport" },
+      { id: "local-4",  nombre: "Leggings Flex Ultra",     categoria: "Mujer",        descripcion: "Compresión con elasticidad de cuatro vías. Para yoga, crossfit y entrenamiento funcional.",          imagen_url: "https://placehold.co/400x500/111111/39FF14?text=Leggings+Flex" },
+      { id: "local-5",  nombre: "Top Deportivo Volt",      categoria: "Mujer",        descripcion: "Soporte medio, diseño cruzado en espalda y tela sin costuras. Comodidad y estilo.",                  imagen_url: "https://placehold.co/400x500/111111/39FF14?text=Top+Volt" },
+      { id: "local-6",  nombre: "Conjunto Deportivo Fem.", categoria: "Mujer",        descripcion: "Set completo top + leggings. Tela premium anti-transparencia y acabado mate deportivo.",             imagen_url: "https://placehold.co/400x500/111111/39FF14?text=Conjunto+Fem" },
+      { id: "local-7",  nombre: "Sudadera Gym Core",       categoria: "Gym",          descripcion: "Capucha y bolsillo canguro. Felpa interior para días fríos. Corte moderno y ajustado.",              imagen_url: "https://placehold.co/400x500/111111/39FF14?text=Sudadera+Core" },
+      { id: "local-8",  nombre: "Conjunto Gym Power",      categoria: "Gym",          descripcion: "Playera + shorts coordinados con tela de secado rápido y mayor rango de movimiento.",                imagen_url: "https://placehold.co/400x500/111111/39FF14?text=Conjunto+Gym" },
+      { id: "local-9",  nombre: "Playera Running Wind",    categoria: "Running",      descripcion: "Ultraligera con reflectivos para visibilidad nocturna. Aerodinámica y transpirable.",                imagen_url: "https://placehold.co/400x500/111111/39FF14?text=Running+Wind" },
+      { id: "local-10", nombre: "Shorts Running Elite",    categoria: "Running",      descripcion: "Compresión interior con capa exterior ligera. Bolsillo seguro integrado.",                           imagen_url: "https://placehold.co/400x500/111111/39FF14?text=Shorts+Elite" },
+      { id: "local-11", nombre: "Pants Casual Volt",       categoria: "Casual Sport", descripcion: "Algodón premium con detalles en verde eléctrico. Equilibrio de comodidad y estilo.",                 imagen_url: "https://placehold.co/400x500/111111/39FF14?text=Pants+Casual" },
+      { id: "local-12", nombre: "Sudadera Casual Street",  categoria: "Casual Sport", descripcion: "Oversized con gráfico bordado. Para el gym, la calle o el home office.",                            imagen_url: "https://placehold.co/400x500/111111/39FF14?text=Sudadera+Street" }
+    ];
+
+    var allProducts = [];
+
+    // ── Navegar a landing con producto seleccionado ──────────
+    function goToProduct(productId, productName, productCategory) {
+      localStorage.setItem("voltfit_product_id",       productId);
+      localStorage.setItem("voltfit_product_name",     productName);
+      localStorage.setItem("voltfit_product_category", productCategory);
+
+      var params = "?producto_id=" + encodeURIComponent(productId)
+                 + "&producto_name=" + encodeURIComponent(productName)
+                 + "&categoria=" + encodeURIComponent(productCategory);
+
+      window.location.href = "landing.html" + params;
+    }
+
+    // ── Renderizar tarjetas ──────────────────────────────────
+    function renderProducts(products) {
+      var grid = document.getElementById("productsGrid");
+
+      if (!products.length) {
+        grid.innerHTML = '<p style="color:var(--color-text-muted);text-align:center;grid-column:1/-1;padding:2rem;">No hay productos en esta categoría.</p>';
+        return;
+      }
+
+      var html = "";
+      for (var i = 0; i < products.length; i++) {
+        var p = products[i];
+        // Escapar comillas simples en nombre para uso en onclick
+        var safeName = p.nombre.replace(/'/g, "\\'");
+        html += '<article class="product-card" data-category="' + p.categoria + '">'
+              + '  <div class="product-card__img-wrap">'
+              + '    <img class="product-card__img" src="' + p.imagen_url + '" alt="' + p.nombre + '" loading="lazy" onerror="this.src=\'https://placehold.co/400x500/111111/39FF14?text=VoltFit\'" />'
+              + '    <span class="product-card__category">' + p.categoria + '</span>'
+              + '  </div>'
+              + '  <div class="product-card__body">'
+              + '    <h3 class="product-card__name">' + p.nombre + '</h3>'
+              + '    <p class="product-card__desc">' + (p.descripcion || "") + '</p>'
+              + '  </div>'
+              + '  <div class="product-card__footer">'
+              + '    <button class="product-card__btn" onclick="goToProduct(\'' + p.id + '\', \'' + safeName + '\', \'' + p.categoria + '\')">Ver más →</button>'
+              + '  </div>'
+              + '</article>';
+      }
+      grid.innerHTML = html;
+    }
+
+    // ── Filtros de categoría ─────────────────────────────────
+    function setupFilters() {
+      var btns = document.querySelectorAll(".filter-btn");
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+          // Quitar active de todos
+          for (var j = 0; j < btns.length; j++) btns[j].classList.remove("active");
+          this.classList.add("active");
+
+          var filter = this.getAttribute("data-filter");
+          var filtered = filter === "all"
+            ? allProducts
+            : allProducts.filter(function(p) { return p.categoria === filter; });
+
+          renderProducts(filtered);
+        });
+      }
+    }
+
+    // ── Animaciones de scroll ────────────────────────────────
+    function setupScrollAnimations() {
+      var elements = document.querySelectorAll(".fade-in");
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) e.target.classList.add("visible");
+        });
+      }, { threshold: 0.1 });
+      elements.forEach(function(el) { observer.observe(el); });
+    }
+
+    // ── Cargar productos ─────────────────────────────────────
+    async function loadProducts() {
+      var grid = document.getElementById("productsGrid");
+      grid.innerHTML = '<p style="color:var(--color-text-muted);text-align:center;grid-column:1/-1;padding:2rem;">Cargando productos…</p>';
+
+      try {
+        var result = await fetchProducts();
+        allProducts = (result.data && result.data.length > 0) ? result.data : FALLBACK_PRODUCTS;
+      } catch (e) {
+        allProducts = FALLBACK_PRODUCTS;
+      }
+
+      renderProducts(allProducts);
+      setupFilters();
+      setupScrollAnimations();
+    }
+
+    // ── Iniciar ──────────────────────────────────────────────
+    loadProducts();
+  </script>
+
+</body>
+</html>
