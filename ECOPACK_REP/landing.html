@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ecopack — Cotiza tu empaque ecológico</title>
+  <meta name="description" content="Solicita tu cotización de empaques ecológicos personalizados. Respuesta en menos de 24 horas." />
+  <link rel="stylesheet" href="styles.css" />
+ <link rel="icon" type="image/png" href="imgs/icon.png" />
+</head>
+<body>
+
+  <!-- ══════════════ NAVBAR ══════════════ -->
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Navegación principal">
+      <div class="container navbar__inner">
+        <a href="home.html" class="navbar__logo" aria-label="Ecopack inicio">
+          <div class="navbar__logo-icon" aria-hidden="true"> <img src="imgs/ico.png" alt="Logo" /></div>
+          Ecopack
+        </a>
+        <a href="home.html" class="btn btn-outline">
+          ← Catálogo
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ══════════════ 1. CALL TO ACTION ══════════════ -->
+    <section class="hero" aria-labelledby="landing-title">
+      <div class="container hero__inner">
+
+        <div class="hero__content animate-up">
+          <div class="hero__badge">
+            🌍 Comprometidos con el planeta
+          </div>
+
+          <h1 class="hero__title" id="landing-title">
+            El empaque que<br>
+            <em>tu marca merece,</em><br>
+            sin dañar la tierra
+          </h1>
+
+          <p class="hero__desc">
+            Cuéntanos qué necesitas y te enviamos una cotización
+            personalizada en menos de 24 horas. Sin compromiso.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#formulario" class="btn btn-primary btn-lg">
+              Llenar formulario ↓
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__visual animate-up" aria-hidden="true">
+          <div class="hero__visual-inner">
+            <span><img src="imgs/coti.png" alt="Logo" /></span>
+            <p>Informate ya</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════ 2. PROPUESTA DE VALOR ══════════════ -->
+    <section class="valores" aria-labelledby="valores-title">
+      <div class="container">
+
+        <header class="valores__header">
+          <span class="section-tag">¿Por qué Ecopack?</span>
+          <h2 id="valores-title">Nuestra propuesta de valor</h2>
+        </header>
+
+        <div class="valores__grid">
+          <div class="valor-card animate-up">
+
+            <div class="valor-card__icon" style="display: flex !important; align-items: center !important; justify-content: center !important; overflow: hidden;">
+            <img src="imgs/sus.png" alt="icono" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+
+            <h3 class="valor-card__title">Sustentabilidad</h3>
+            <p class="valor-card__desc">
+              Todos nuestros materiales son biodegradables, reciclables
+              o compostables. Cuidamos el planeta en cada empaque.
+            </p>
+          </div>
+
+          <div class="valor-card animate-up">
+          
+            <div class="valor-card__icon" style="display: flex !important; align-items: center !important; justify-content: center !important; overflow: hidden;">
+            <img src="imgs/chidos.png" alt="icono" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+
+            <h3 class="valor-card__title">Calidad garantizada</h3>
+            <p class="valor-card__desc">
+              Materiales certificados y procesos de producción rigurosos
+              para que tu producto llegue en perfectas condiciones.
+            </p>
+          </div>
+
+          <div class="valor-card animate-up">
+            
+            <div class="valor-card__icon" style="display: flex !important; align-items: center !important; justify-content: center !important; overflow: hidden;">
+            <img src="imgs/per.png" alt="icono" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+
+            <h3 class="valor-card__title">Personalización total</h3>
+            <p class="valor-card__desc">
+              Medidas, colores, logotipos e impresiones. Tu marca
+              visible en cada entrega, a tu manera.
+            </p>
+          </div>
+
+          <div class="valor-card animate-up">
+           
+            <div class="valor-card__icon" style="display: flex !important; align-items: center !important; justify-content: center !important; overflow: hidden;">
+            <img src="imgs/envios.png" alt="icono" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+
+            <h3 class="valor-card__title">Entrega eficiente</h3>
+            <p class="valor-card__desc">
+              Tiempos de producción y entrega competitivos para que
+              tu negocio no se detenga nunca.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ 3. FORMULARIO ══════════════ -->
+    <section id="formulario" class="form-section" aria-labelledby="form-title">
+      <div class="container form-section__inner">
+
+        <!-- Info lateral -->
+        <div class="form-section__info animate-up">
+          <span class="section-tag">Contacto</span>
+          <h2 id="form-title">Obtén precios según tu negocio</h2>
+          <p>
+            Completa el formulario y te ayudamos a encontrar la mejor opción de empaques para tu negocio.
+          </p>
+
+          <ul class="form-info-list">
+            <li>Sin costo ni compromiso</li>
+            <li>Asesoría personalizada</li>
+            <li>Respuesta en menos de 24 horas</li>
+            <li>Envíos a Toluca y municipios cercanos como Metepec, San Miguel Zinacantepec y Calimaya</li>
+          </ul>
+        </div>
+
+        <!-- Formulario -->
+        <div class="animate-up">
+          <form
+            id="lead-form"
+            class="lead-form"
+            novalidate
+            aria-label="Formulario de cotización"
+          >
+
+            <div class="form-grid">
+
+              <!-- Nombre -->
+              <div class="form-group">
+                <label for="nombre">
+                  Nombre completo <span class="req" aria-hidden="true">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  class="form-control"
+                  placeholder="Ej. Ana García"
+                  required
+                  autocomplete="name"
+                />
+              </div>
+
+              <!-- Correo -->
+              <div class="form-group">
+                <label for="correo">
+                  Correo electrónico <span class="req" aria-hidden="true">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="correo"
+                  name="correo"
+                  class="form-control"
+                  placeholder="tu@correo.com"
+                  required
+                  autocomplete="email"
+                />
+              </div>
+
+             <!-- Teléfono -->
+<div class="form-group">
+  <label for="telefono">
+    Teléfono <span class="req" aria-hidden="true">*</span>
+  </label>
+  <input
+    type="tel"
+    id="telefono"
+    name="telefono"
+    class="form-control"
+    placeholder="720 XXX XXXX"
+    pattern="^72[0-9]{2}\s?[0-9]{3}\s?[0-9]{3}$"
+    title="El número debe iniciar con 72 y tener 10 dígitos en total."
+    required
+    autocomplete="tel"
+  />
+  <small id="telefono-hint" style="font-size:.78rem; color: var(--texto-suave);">
+    Formato: 10 dígitos locales (Debe iniciar con 72)
+  </small>
+</div>
+
+              <!-- Producto (hardcodeado, se autoselecciona desde producto=) -->
+              <div class="form-group">
+                <label for="producto_id">
+                  Producto de interés <span class="req" aria-hidden="true">*</span>
+                </label>
+                <select id="producto_id" name="producto_id" class="form-control" required>
+                  <option value="">Selecciona un producto</option>
+                  <option value="1">Empaques reciclados</option>
+                  <option value="2">Cajas de cartón</option>
+                  <option value="3">Cubiertos reciclados</option>
+                  <option value="4">Bolsas de papel</option>
+                  <option value="5">Envases biodegradables</option>
+                </select>
+              </div>
+
+              <!-- Tipo de persona y Plazo — fila de 2 columnas -->
+              <div class="form-row">
+
+                <div class="form-group">
+                  <label for="tipo_persona">
+                    Tipo de cliente <span class="req" aria-hidden="true">*</span>
+                  </label>
+                  <select id="tipo_persona" name="tipo_persona" class="form-control" required>
+                    <option value="">Selecciona...</option>
+                    <option value="individual">Persona individual</option>
+                    <option value="negocio">Negocio</option>
+                    <option value="empresa">Empresa</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="plazo">
+                    ¿Cuándo lo necesitas? <span class="req" aria-hidden="true">*</span>
+                  </label>
+                  <select id="plazo" name="plazo" class="form-control" required>
+                    <option value="">Selecciona...</option>
+                    <option value="interes">Solo me interesa</option>
+                    <option value="medio">En 1-3 meses</option>
+                    <option value="corto">En menos de 1 mes</option>
+                    <option value="urgente">Lo necesito ya</option>
+                  </select>
+                </div>
+
+              </div>
+
+              <!-- Checkbox de aeptación -->
+              <div class="form-group">
+                <label class="form-check">
+                  <input
+                    type="checkbox"
+                    id="acepta"
+                    name="acepta"
+                    required
+                  />
+                  <span>
+                    Acepto que Ecopack trate mis datos personales conforme
+                    al <a href="#aviso-legal" style="color:var(--verde); font-weight:600;">aviso de privacidad</a>.
+                    <span class="req" aria-hidden="true">*</span>
+                  </span>
+                </label>
+              </div>
+
+              <!-- Mensaje de estado -->
+              <div
+                id="form-status"
+                role="alert"
+                aria-live="polite"
+              ></div>
+
+              <!-- Botón enviar -->
+              <button
+                type="submit"
+                id="submit-btn"
+                class="btn btn-primary btn-lg"
+                style="width:100%; justify-content:center;"
+              >
+                Enviar solicitud →
+              </button>
+
+            </div><!-- /.form-grid -->
+          </form>
+        </div><!-- /formulario wrapper -->
+
+      </div>
+    </section>
+
+    <!-- ══════════════ 4. AVISO LEGAL ══════════════ -->
+    <section id="aviso-legal" class="aviso" aria-labelledby="aviso-title">
+      <div class="container">
+        <h3 id="aviso-title">Aviso de Privacidad | <img src="imgs/eco.png" alt="ecopack" style="height: 2.5em; width: auto;" /></h3>
+        <p>
+          <strong>Ecopack</strong>, con domicilio en Toluca Estado de México, es el responsable del
+          tratamiento de los datos personales que usted nos proporcione a través
+          del presente formulario.
+        </p>
+        <br>
+        <p>Sus datos personales serán utilizados para las siguientes finalidades:</p>
+        <ul>
+          <li>Dar seguimiento a su solicitud de cotización de empaques ecológicos.</li>
+          <li>Contactarle para brindarle información sobre nuestros productos y servicios.</li>
+          <li>Elaborar estadísticas internas sobre preferencias y demanda de productos.</li>
+        </ul>
+        <br>
+        <p>
+          Los datos recabados son: nombre, correo electrónico y teléfono. No se
+          comparten con terceros sin su consentimiento expreso, salvo obligación
+          legal. Usted puede ejercer sus derechos ARCO (Acceso, Rectificación,
+          Cancelación y Oposición) enviando un correo a
+          <strong>equipoecopack@gmail.com</strong> indicando su nombre y el derecho
+          que desea ejercer.
+        </p>
+        <br>
+        <p>
+          Al marcar la casilla de aceptación en el formulario, usted otorga su
+          consentimiento expreso para el tratamiento de sus datos en los términos
+          descritos en el presente aviso.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer>
+    <div class="container">
+    <p style="display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; text-align: center;">
+  © 2026 <strong>Ecopack</strong> — 
+  <img src="imgs/ecos.png" alt="ecopack" style="height: 1.9em; width: auto;" /> 
+  Todos los derechos reservados. Toluca Estado de México 
+</p>
+    </div>
+  </footer>
+
+  <!-- ── Scripts ──────────────────────────────────────────────── -->
+  <!-- Primero el scoring, luego supabase (que lo usa) -->
+  <script src="lead-scoring.js"></script>
+  <script src="supabase.js"></script>
+
+  <script>
+    /**
+     * landing.html — lógica de la UI
+     * ─────────────────────────────────────────────────────────
+     * 1. Autoseleccionar producto desde ?producto=ID en la URL
+     * 2. Validar formulario
+     * 3. Calcular prioridad con calcularPrioridad()
+     * 4. Insertar lead con insertarLead()
+     * ─────────────────────────────────────────────────────────
+     */
+
+    // ── 1. Autoselección de producto desde query string ──────
+    (function autoSelectProducto() {
+      const params   = new URLSearchParams(window.location.search);
+      const productoId = params.get("producto");
+
+      if (productoId) {
+        const select = document.getElementById("producto_id");
+        // Verificamos que el valor exista entre las opciones
+        const optionExists = Array.from(select.options)
+          .some(opt => opt.value === productoId);
+
+        if (optionExists) {
+          select.value = productoId;
+        }
+      }
+    })();
+
+   // ── 2. Validación de teléfono (Local 10 dígitos - Prefijo 72) ─────────
+function validarTelefono(tel) {
+  // Quita los espacios para dejar solo los números corridos
+  const clean = tel.replace(/\s+/g, "");
+  // Valida que empiece con 72 y tenga exactamente 10 dígitos en total (72 + 8 números)
+  return /^72\d{8}$/.test(clean);
+}
+
+    // ── 3. Helpers de UI ─────────────────────────────────────
+    const statusEl  = document.getElementById("form-status");
+    const submitBtn = document.getElementById("submit-btn");
+
+    function setStatus(type, msg) {
+      statusEl.className = type;   // "loading" | "success" | "error"
+      statusEl.textContent = msg;
+    }
+
+    function setBtnLoading(loading) {
+      submitBtn.disabled = loading;
+      submitBtn.textContent = loading ? "Enviando…" : "Enviar solicitud →";
+    }
+
+    // ── 4. Manejo del submit ──────────────────────────────────
+    document.getElementById("lead-form").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      // Leer valores
+      const nombre      = document.getElementById("nombre").value.trim();
+      const correo      = document.getElementById("correo").value.trim();
+      const telefono    = document.getElementById("telefono").value.trim();
+      const producto_id = parseInt(document.getElementById("producto_id").value, 10);
+      const tipo_persona= document.getElementById("tipo_persona").value;
+      const plazo       = document.getElementById("plazo").value;
+      const acepta      = document.getElementById("acepta").checked;
+
+      // Validaciones básicas
+      if (!nombre || !correo || !telefono || !producto_id || !tipo_persona || !plazo) {
+        setStatus("error", "⚠️ Por favor completa todos los campos obligatorios.");
+        return;
+      }
+
+     if (!validarTelefono(telefono)) {
+  setStatus("error", "⚠️ El teléfono debe iniciar con 72 y tener 10 dígitos en total. Ej: 720 XXX XXXX");
+  document.getElementById("telefono").focus();
+  return;
+}
+
+      if (!acepta) {
+        setStatus("error", "⚠️ Debes aceptar el aviso de privacidad para continuar.");
+        return;
+      }
+
+      // Calcular prioridad (lead-scoring.js)
+      const prioridad = calcularPrioridad(tipo_persona, plazo);
+
+      // Construir objeto lead
+      const lead = {
+        nombre,
+        correo,
+        telefono,
+        producto_id,
+        tipo_persona,
+        plazo,
+        prioridad,
+      };
+
+      // Enviar a Supabase (supabase.js)
+      setBtnLoading(true);
+
+      await insertarLead(lead, {
+        onLoading: () => {
+          setStatus("loading", "⏳ Enviando tu solicitud…");
+        },
+        onSuccess: (registro) => {
+          setStatus("success", "✅ ¡Solicitud recibida! Un asesor se pondrá en contacto contigo en menos de 24 horas.");
+          document.getElementById("lead-form").reset();
+          setBtnLoading(false);
+        },
+        onError: (msg) => {
+          setStatus("error", `❌ Ocurrió un error al enviar tu solicitud: ${msg}`);
+          setBtnLoading(false);
+        },
+      });
+    });
+  </script>
+
+</body>
+</html>
