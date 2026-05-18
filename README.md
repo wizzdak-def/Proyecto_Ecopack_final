@@ -1,3 +1,4 @@
+<img width="1024" height="1536" alt="como funciona" src="https://github.com/user-attachments/assets/ab2b09b1-a3e6-400d-b2c7-77f9d48a6e45" />
 # 🌿 Ecopack B2B — Documentación Técnica
 
 > Proyecto escolar desarrollado para la materia de **Ingeniería de Software**.  
